@@ -1,24 +1,24 @@
 <VirtualHost *:80>
     ServerAdmin webmaster@localhost
-    ServerName dynamic-site
+    ServerName zend
 
-    DocumentRoot /var/www/dynamic-site/public
+    DocumentRoot /vagrant/zend/public
     <Directory />
         Options FollowSymLinks
-        AllowOverride None
+        AllowOverride All
     </Directory>
-        <Directory /var/www/dynamic-site/public>
+        <Directory /vagrant/zend/public>
         Options Indexes FollowSymLinks MultiViews
-        AllowOverride None
+        AllowOverride All
         Order allow,deny
         allow from all
     </Directory>
 
-    ErrorLog ${APACHE_LOG_DIR}/dynamic-site-error.log
+    ErrorLog ${APACHE_LOG_DIR}/error.log
 
     # Possible values include: debug, info, notice, warn, error, crit,
     # alert, emerg.
     LogLevel warn
 
-    CustomLog ${APACHE_LOG_DIR}/dynamic-site-access.log combined
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
